@@ -29,3 +29,4 @@ use the editor.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
 - Slide deck lives in src/deck: each slide is a SlideDef (steps + transition + render(step)) in slides.tsx, rendered at 1920x1080 and scaled by Deck.tsx; URL ?slide=&step= mirrors position (1-based) so refresh/share keeps place.
+- Use the shared lesson content and split rules for both React slides and the prebuilt editable PowerPoint so explanations and speaker notes remain aligned; regenerate the static download after content edits.
