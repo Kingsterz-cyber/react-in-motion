@@ -13,8 +13,8 @@ function tokenize(line: string) {
     let c = "text-foreground/90";
     if (t.startsWith("//")) c = "text-code-comment italic";
     else if (/^["'`]/.test(t)) c = "text-code-str";
-    else if (t.match(PROP)?.[0] === t) c = "text-code-prop font-semibold";
-    else if (t.match(KW)?.[0] === t) c = "text-code-kw";
+    else if (PROP.test(t) && t.match(PROP)![0] === t) c = "text-code-prop font-semibold";
+    else if (KW.test(t) && t.match(KW)![0] === t) c = "text-code-kw";
     else if (/^[A-Z]/.test(t)) c = "text-code-fn";
     else if (/^\d+$/.test(t)) c = "text-code-prop";
     else if (/^[^\w\s]+$/.test(t)) c = "text-muted-foreground";
@@ -33,7 +33,7 @@ export function Code({ lines, highlight = [], visible, title = "App.jsx", classN
         <span className="h-3.5 w-3.5 rounded-full bg-success/80" />
         <span className="ml-4 font-mono text-[18px] text-muted-foreground">{title}</span>
       </div>
-      <pre className="px-2 py-5 font-mono text-[23px] leading-[1.5]">
+      <pre className="px-2 py-5 font-mono text-[24px] leading-[1.6]">
         {lines.map((l, i) => {
           const hl = highlight.includes(i);
           return (

@@ -28,8 +28,8 @@ export function Frame({ page, kicker, children }: { page: number; kicker?: strin
 export function Title({ children, sub }: { children: ReactNode; sub?: ReactNode }) {
   return (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-      <h2 className="text-[72px] font-bold leading-[1.08]">{children}</h2>
-      {sub && <p className="mt-4 max-w-[1700px] text-[30px] leading-snug text-muted-foreground">{sub}</p>}
+      <h2 className="text-[84px] font-bold leading-[1.02] tracking-tight">{children}</h2>
+      {sub && <p className="mt-4 max-w-[1100px] text-[32px] leading-snug text-muted-foreground">{sub}</p>}
     </motion.div>
   );
 }
